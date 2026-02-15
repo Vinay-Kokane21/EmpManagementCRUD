@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmpManagement.Controllers
 {
-    public class EmpManagementController1 : Controller
+    public class EmpManagementController : Controller
     {
         private readonly AppDbContext _context;
-        public EmpManagementController1(AppDbContext context)
+        public EmpManagementController(AppDbContext context)
         {
             _context = context;
             
@@ -15,8 +15,8 @@ namespace EmpManagement.Controllers
         //Read
         public IActionResult Index()
         {
-            List<Employee> empentry = _context.Employees.ToList();
-            return View(empentry);
+            List<Employee> emp = _context.Employees.ToList();
+            return View(emp);
         }
 
         //Create
